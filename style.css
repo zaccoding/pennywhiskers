@@ -1,5 +1,6 @@
-/* the app's own look, brought to the web: jersey 15, cream panels with a
-   gold rim and a hard pixel shadow, warm ink, the meadow sky behind */
+/* the settings sheet, brought to the web: the same soft sky to cream
+   gradient, and every word inside a cream panel with a gold rim and a
+   small label above it, exactly as the app groups its rows */
 @font-face {
   font-family: "Jersey 15";
   src: url("Jersey15.ttf") format("truetype");
@@ -8,83 +9,88 @@
 
 :root {
   --cream: #fff7e6;
-  --tile: #fdf5e3;
+  --panel: rgba(255, 247, 230, 0.94);
   --ink: #3d2e26;
   --subtle: #6b594d;
   --gold: #e0ab38;
   --red: #c2383f;
   --red-deep: #8f2645;
-  --sky-top: #7fbde8;
-  --sky-mid: #b6dcf2;
+  --sky: #b8dbe8;
+  --meadow: #f0e8c9;
   --shadow: rgba(56, 38, 46, 0.22);
+  --hairline: rgba(61, 46, 38, 0.10);
 }
 
 * { box-sizing: border-box; margin: 0; }
-
 html { -webkit-text-size-adjust: 100%; }
 
 body {
   font-family: "Jersey 15", "Courier New", monospace;
   color: var(--ink);
-  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 42%, var(--cream) 100%);
+  background: linear-gradient(180deg, var(--sky) 0%, var(--meadow) 100%);
   background-attachment: fixed;
   min-height: 100vh;
-  line-height: 1.45;
+  line-height: 1.4;
   font-size: 22px;
 }
 
 main {
-  max-width: 760px;
+  max-width: 640px;
   margin: 0 auto;
-  padding: 3rem 1.25rem 4rem;
+  padding: 1.6rem 1rem 3rem;
 }
 
-h1 {
-  font-size: 44px;
-  font-weight: 400;
-  line-height: 1.1;
+/* the sheet's top bar: a title on the left, a cream pill on the right */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .4rem .2rem 1rem;
+}
+.topbar h1 { font-size: 32px; font-weight: 400; line-height: 1; }
+.pill {
+  font-size: 22px;
   color: var(--ink);
+  background: rgba(255, 247, 230, 0.9);
+  border: 1.5px solid rgba(224, 171, 56, 0.6);
+  border-radius: 999px;
+  padding: .35rem 1rem;
+  text-decoration: none;
 }
+.pill:hover { text-decoration: none; background: var(--cream); }
 
-h2 {
-  font-size: 28px;
-  font-weight: 400;
-  margin-top: 1.8rem;
-  margin-bottom: .4rem;
+/* one settings group: the small label, then the panel that holds it */
+.group { margin: 0 0 1rem; }
+.label {
+  font-size: 19px;
+  color: var(--subtle);
+  padding: 0 0 .35rem .6rem;
 }
-
-p { margin: .6rem 0; }
-
-.subtle { color: var(--subtle); }
+.panel {
+  background: var(--panel);
+  border: 1.5px solid rgba(224, 171, 56, 0.5);
+  border-radius: 19px;
+  padding: 1rem 1.1rem;
+}
+.panel p { margin: 0; }
+.panel p + p { margin-top: .75rem; }
+.panel hr {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+  margin: .85rem 0;
+}
+.panel.center { text-align: center; }
 
 a { color: var(--red-deep); text-decoration: none; }
 a:hover { text-decoration: underline; }
+.subtle { color: var(--subtle); }
 
-/* the pixel panel from the app */
-.panel {
-  background: var(--cream);
-  border: 2px solid rgba(224, 171, 56, 0.76);
-  border-radius: 25px;
-  padding: 1.4rem 1.6rem;
-  box-shadow: 0 5px 0 var(--shadow);
-  margin: 1.4rem 0;
-}
-
-/* the softer cloud chip the meadow uses for pills and hints */
-.chip {
-  display: inline-block;
-  background: rgba(255, 247, 230, 0.86);
-  border: 1.5px solid rgba(224, 171, 56, 0.55);
-  border-radius: 19px;
-  padding: .45rem 1rem;
-  box-shadow: 0 3px 0 rgba(56, 38, 46, 0.16);
-}
-
-/* the lucky red primary button */
+/* the lucky red primary button, and its quiet resting twin */
 .button {
   display: inline-block;
   font-family: inherit;
   font-size: 24px;
+  line-height: 1.15;
   color: #fff;
   background: linear-gradient(180deg, var(--red) 0%, var(--red-deep) 100%);
   border: 2px solid rgba(224, 171, 56, 0.8);
@@ -95,22 +101,12 @@ a:hover { text-decoration: underline; }
 }
 .button.quiet {
   color: var(--subtle);
-  background: var(--tile);
+  background: rgba(255, 255, 255, 0.7);
   border-color: rgba(61, 46, 38, 0.18);
   box-shadow: none;
   cursor: default;
 }
 .button small { display: block; font-size: 17px; opacity: .8; }
 
-footer {
-  margin-top: 2.6rem;
-  text-align: center;
-  color: var(--subtle);
-  font-size: 19px;
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid rgba(61, 46, 38, 0.12);
-  margin: 1.2rem 0;
-}
+footer { padding: .6rem .6rem 0; text-align: center; color: var(--subtle); font-size: 19px; }
+footer a { color: var(--subtle); text-decoration: underline; }
