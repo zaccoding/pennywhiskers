@@ -26,7 +26,7 @@ body {
   color: var(--ink);
   background: var(--sky);
   min-height: 100vh;
-  line-height: 1.4;
+  line-height: 1.5;
   font-size: 22px;
 }
 
@@ -52,10 +52,10 @@ main {
   background: var(--cream);
   border: 2px solid rgba(224, 171, 56, 0.8);
   border-radius: 25px;
-  padding: 1.5rem 1.5rem;
+  padding: 1.7rem 1.6rem;
   box-shadow: 0 6px 0 var(--shadow);
 }
-.card + .card, .card + .shots, .shots + .card { margin-top: 1.6rem; }
+.card + .card, .card + .shots, .shots + .card { margin-top: 2.8rem; }
 .card p { margin: 0; }
 .card p + p { margin-top: .8rem; }
 .card h2 { font-size: 26px; font-weight: 400; margin: 1.3rem 0 .3rem; }
@@ -114,8 +114,8 @@ h1 { font-size: 46px; font-weight: 400; line-height: 1; }
    dirt patch, breathing slowly */
 .cat {
   position: absolute;
-  width: 112px;
-  height: 112px;
+  width: 184px;
+  height: 184px;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   transform-origin: 50% 100%;
@@ -123,8 +123,8 @@ h1 { font-size: 46px; font-weight: 400; line-height: 1; }
 }
 .coin {
   position: absolute;
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   animation: bob 2.6s ease-in-out infinite;
@@ -132,6 +132,7 @@ h1 { font-size: 46px; font-weight: 400; line-height: 1; }
 @keyframes breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.025); } }
 @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 @media (prefers-reduced-motion: reduce) { .cat, .coin { animation: none; } }
+@media (max-width: 430px) { .cat { width: 156px; height: 156px; } }
 
 footer {
   margin-top: 2rem;
