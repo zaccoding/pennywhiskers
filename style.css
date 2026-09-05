@@ -1,6 +1,5 @@
-/* the app's warmth, brought to the web: a quiet parchment page, and
-   every word inside a cream panel with a gold rim and the wallet card's
-   hard pixel shadow, with a small label above it as settings does */
+/* standing in the meadow: the app's own painting is the page, the cat is
+   on it, and the words sit in the same cream cards the app uses over it */
 @font-face {
   font-family: "Jersey 15";
   src: url("Jersey15.ttf") format("truetype");
@@ -9,16 +8,14 @@
 
 :root {
   --cream: #fffaf0;
-  --panel: #fffaf0;
   --ink: #3d2e26;
   --subtle: #6b594d;
   --gold: #e0ab38;
   --red: #c2383f;
   --red-deep: #8f2645;
-  --page-top: #f7f0dd;
-  --page-bottom: #eadfbf;
-  --shadow: rgba(56, 38, 46, 0.22);
-  --hairline: rgba(61, 46, 38, 0.10);
+  --sky: #3eacf0;
+  --shadow: rgba(56, 38, 46, 0.28);
+  --hairline: rgba(61, 46, 38, 0.12);
 }
 
 * { box-sizing: border-box; margin: 0; }
@@ -27,67 +24,66 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   font-family: "Jersey 15", "Courier New", monospace;
   color: var(--ink);
-  background: linear-gradient(180deg, var(--page-top) 0%, var(--page-bottom) 100%);
-  background-attachment: fixed;
+  background: var(--sky);
   min-height: 100vh;
   line-height: 1.4;
   font-size: 22px;
 }
 
+/* the meadow, pinned behind everything and scaled with crisp pixels */
+.meadow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--sky) url("meadow.png") center 58% / cover no-repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
 main {
-  max-width: 640px;
+  max-width: 560px;
   margin: 0 auto;
-  padding: 1.6rem 1rem 3rem;
+  padding: 2.4rem 1rem 3.5rem;
 }
 
-/* the sheet's top bar: a title on the left, a cream pill on the right */
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: .4rem .2rem 1rem;
-}
-.topbar h1 { font-size: 32px; font-weight: 400; line-height: 1; }
-.pill {
-  font-size: 22px;
-  color: var(--ink);
+/* the app's pixel panel */
+.card {
+  position: relative;
   background: var(--cream);
-  border: 1.5px solid rgba(224, 171, 56, 0.7);
-  box-shadow: 0 3px 0 rgba(56, 38, 46, 0.16);
-  border-radius: 999px;
-  padding: .35rem 1rem;
-  text-decoration: none;
+  border: 2px solid rgba(224, 171, 56, 0.8);
+  border-radius: 25px;
+  padding: 1.5rem 1.5rem;
+  box-shadow: 0 6px 0 var(--shadow);
 }
-.pill:hover { text-decoration: none; background: var(--cream); }
-
-/* one settings group: the small label, then the panel that holds it */
-.group { margin: 0 0 1rem; }
-.label {
-  font-size: 19px;
-  color: var(--subtle);
-  padding: 0 0 .35rem .6rem;
-}
-.panel {
-  background: var(--panel);
-  border: 2px solid rgba(224, 171, 56, 0.72);
-  border-radius: 19px;
-  padding: 1rem 1.1rem;
-  box-shadow: 0 5px 0 var(--shadow);
-}
-.panel p { margin: 0; }
-.panel p + p { margin-top: .75rem; }
-.panel hr {
-  border: 0;
-  border-top: 1px solid var(--hairline);
-  margin: .85rem 0;
-}
-.panel.center { text-align: center; }
+.card + .card, .card + .shots, .shots + .card { margin-top: 1.6rem; }
+.card p { margin: 0; }
+.card p + p { margin-top: .8rem; }
+.card h2 { font-size: 26px; font-weight: 400; margin: 1.3rem 0 .3rem; }
+.card h2:first-child { margin-top: 0; }
+.card hr { border: 0; border-top: 1px solid var(--hairline); margin: 1.1rem 0; }
 
 a { color: var(--red-deep); text-decoration: none; }
 a:hover { text-decoration: underline; }
 .subtle { color: var(--subtle); }
+.small { font-size: 19px; }
 
-/* the lucky red primary button, and its quiet resting twin */
+h1 { font-size: 46px; font-weight: 400; line-height: 1; }
+
+/* the cream pill the app uses for its name tag and the done button */
+.pill {
+  display: inline-block;
+  font-size: 22px;
+  color: var(--ink);
+  background: var(--cream);
+  border: 1.5px solid rgba(224, 171, 56, 0.7);
+  border-radius: 999px;
+  padding: .35rem 1.05rem;
+  box-shadow: 0 3px 0 var(--shadow);
+  text-decoration: none;
+}
+.pill:hover { text-decoration: none; }
+
+/* the lucky red button */
 .button {
   display: inline-block;
   font-family: inherit;
@@ -95,20 +91,45 @@ a:hover { text-decoration: underline; }
   line-height: 1.15;
   color: #fff;
   background: linear-gradient(180deg, var(--red) 0%, var(--red-deep) 100%);
-  border: 2px solid rgba(224, 171, 56, 0.8);
+  border: 2px solid rgba(224, 171, 56, 0.85);
   border-radius: 14px;
-  padding: .7rem 1.4rem;
+  padding: .75rem 1.5rem;
   box-shadow: 0 5px 0 var(--shadow);
   text-decoration: none;
 }
 .button.quiet {
   color: var(--subtle);
   background: var(--cream);
-  border-color: rgba(224, 171, 56, 0.5);
-  box-shadow: 0 3px 0 rgba(56, 38, 46, 0.16);
+  border-color: rgba(224, 171, 56, 0.55);
   cursor: default;
 }
 .button small { display: block; font-size: 17px; opacity: .8; }
 
-footer { padding: .6rem .6rem 0; text-align: center; color: var(--subtle); font-size: 19px; }
-footer a { color: var(--subtle); text-decoration: underline; }
+/* the cat, sitting in front of a card the way it sits in front of its
+   dirt patch, breathing slowly */
+.cat {
+  position: absolute;
+  width: 112px;
+  height: 112px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  transform-origin: 50% 100%;
+  animation: breathe 4.2s ease-in-out infinite;
+}
+.coin {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  animation: bob 2.6s ease-in-out infinite;
+}
+@keyframes breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.025); } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) { .cat, .coin { animation: none; } }
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+footer .pill { font-size: 19px; color: var(--subtle); }

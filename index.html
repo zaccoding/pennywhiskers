@@ -6,65 +6,51 @@
 <title>Pennywhiskers: a kind pet for your fun money</title>
 <meta name="description" content="A tiny cat holds your fun money for the day and never shames you when you slip. No bank, no sign-up. Everything stays on your phone.">
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 <style>
-  .hero { text-align: center; padding: .4rem 0 1.2rem; }
-  .icon { width: 116px; height: 116px; border-radius: 26px; box-shadow: 0 5px 0 var(--shadow); }
-  .hero h1 { font-size: 40px; font-weight: 400; margin: .8rem 0 0; line-height: 1; }
-  .shots { display: flex; gap: .7rem; justify-content: center; }
-  .shots img { width: 31%; border-radius: 16px; box-shadow: 0 5px 0 var(--shadow); }
-  .cta { text-align: center; padding: .4rem 0 .2rem; }
+  .hero { text-align: center; padding: 2.2rem 1.5rem 2rem; margin-bottom: 4.6rem; }
+  .icon { width: 128px; height: 128px; border-radius: 28px; box-shadow: 0 6px 0 var(--shadow); }
+  .hero h1 { margin: 1rem 0 .5rem; }
+  .hook { max-width: 26rem; margin: 0 auto 1.4rem; }
+  .hero .cat { left: 50%; bottom: -84px; margin-left: -56px; }
+  .hero .coin { left: 50%; bottom: 28px; margin-left: -13px; }
+  .shots { display: flex; justify-content: center; align-items: flex-end; padding: 0 .4rem; }
+  .shots img { width: 34%; border-radius: 18px; box-shadow: 0 7px 0 var(--shadow); border: 2px solid rgba(224, 171, 56, 0.8); }
+  .shots img:nth-child(1) { transform: rotate(-5deg) translateY(10px); }
+  .shots img:nth-child(2) { z-index: 1; width: 38%; margin: 0 -1.2rem; }
+  .shots img:nth-child(3) { transform: rotate(5deg) translateY(10px); }
+  .promise strong { display: block; font-size: 26px; margin-bottom: .3rem; }
+  .cta { text-align: center; margin: 1.6rem 0 0; }
 </style>
 </head>
 <body>
+<div class="meadow" aria-hidden="true"></div>
 <main>
-  <div class="hero">
+  <section class="card hero">
     <img class="icon" src="icon.png" alt="the pennywhiskers app icon: a cat peeking out of a wallet">
     <h1>pennywhiskers</h1>
+    <p class="hook">a tiny cat holds your fun money for the day and never shames you when you slip.</p>
+    <span class="button quiet">coming soon to the app store<small>for iphone · pay once</small></span>
+    <img class="coin" src="coin.png" alt="">
+    <img class="cat" src="cat.png" alt="mochi, the ginger money cat, sitting in the meadow">
+  </section>
+
+  <div class="shots">
+    <img src="shot-01-hero.png" alt="the meadow: mochi guarding the day's coin">
+    <img src="shot-04-kind.png" alt="a day over budget: the cat is sad, not mad, and it is forgiven by morning">
+    <img src="shot-06-cats.png" alt="picking your money cat: ginger or gray">
   </div>
 
-  <div class="group">
-    <div class="label">a kind pet for your fun money</div>
-    <div class="panel">
-      <p>a tiny cat holds your fun money for the day and never shames you when you slip. one gold coin every morning, one tap to log a spend, and a friend who is sad, not mad, on the hard days.</p>
-    </div>
-  </div>
-
-  <div class="group">
-    <div class="label">the meadow</div>
-    <div class="panel">
-      <div class="shots">
-        <img src="shot-01-hero.png" alt="the meadow: mochi the ginger cat guarding the day's coin">
-        <img src="shot-04-kind.png" alt="a day over budget: the cat is sad, not mad, and it is forgiven by morning">
-        <img src="shot-06-cats.png" alt="picking your money cat: ginger or gray, two very good cats">
-      </div>
-    </div>
-  </div>
-
-  <div class="group">
-    <div class="label">no bank. no sign-up. no ads.</div>
-    <div class="panel">
-      <p>pennywhiskers never connects to anything. your money story is one file on your phone: export it any time, delete the app and it is gone.</p>
-      <hr>
-      <p class="subtle">pennywhiskers is a game about noticing your own spending. it is not financial advice, it does not connect to your bank, and it never touches real money.</p>
-    </div>
-  </div>
-
-  <div class="cta">
-    <span class="button quiet">coming soon to the app store<small>for iphone · one time purchase</small></span>
-  </div>
-
-  <div class="group">
-    <div class="label">questions</div>
-    <div class="panel">
-      <p><a href="mailto:zaccodingsupport@gmail.com">zaccodingsupport@gmail.com</a></p>
-      <hr>
-      <p><a href="privacy.html">privacy policy</a></p>
-    </div>
-  </div>
+  <section class="card promise">
+    <p><strong>no bank. no sign-up. no ads.</strong>one gold coin every morning, one tap to log a spend, and a friend who is sad, not mad, on the hard days. your money story is one file on your phone: export it any time, delete the app and it is gone.</p>
+    <hr>
+    <p class="subtle small">pennywhiskers is a game about noticing your own spending. it is not financial advice, it does not connect to your bank, and it never touches real money.</p>
+  </section>
 
   <footer>
-    <p>© 2026 zachary goding</p>
+    <a class="pill" href="mailto:zaccodingsupport@gmail.com">zaccodingsupport@gmail.com</a>
+    <a class="pill" href="privacy.html">privacy policy</a>
+    <p class="subtle small" style="margin-top:1rem">© 2026 zachary goding</p>
   </footer>
 </main>
 </body>
