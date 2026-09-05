@@ -1,0 +1,116 @@
+/* the app's own look, brought to the web: jersey 15, cream panels with a
+   gold rim and a hard pixel shadow, warm ink, the meadow sky behind */
+@font-face {
+  font-family: "Jersey 15";
+  src: url("Jersey15.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  --cream: #fff7e6;
+  --tile: #fdf5e3;
+  --ink: #3d2e26;
+  --subtle: #6b594d;
+  --gold: #e0ab38;
+  --red: #c2383f;
+  --red-deep: #8f2645;
+  --sky-top: #7fbde8;
+  --sky-mid: #b6dcf2;
+  --shadow: rgba(56, 38, 46, 0.22);
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: "Jersey 15", "Courier New", monospace;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 42%, var(--cream) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  line-height: 1.45;
+  font-size: 22px;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+h1 {
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-top: 1.8rem;
+  margin-bottom: .4rem;
+}
+
+p { margin: .6rem 0; }
+
+.subtle { color: var(--subtle); }
+
+a { color: var(--red-deep); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* the pixel panel from the app */
+.panel {
+  background: var(--cream);
+  border: 2px solid rgba(224, 171, 56, 0.76);
+  border-radius: 25px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 5px 0 var(--shadow);
+  margin: 1.4rem 0;
+}
+
+/* the softer cloud chip the meadow uses for pills and hints */
+.chip {
+  display: inline-block;
+  background: rgba(255, 247, 230, 0.86);
+  border: 1.5px solid rgba(224, 171, 56, 0.55);
+  border-radius: 19px;
+  padding: .45rem 1rem;
+  box-shadow: 0 3px 0 rgba(56, 38, 46, 0.16);
+}
+
+/* the lucky red primary button */
+.button {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 24px;
+  color: #fff;
+  background: linear-gradient(180deg, var(--red) 0%, var(--red-deep) 100%);
+  border: 2px solid rgba(224, 171, 56, 0.8);
+  border-radius: 14px;
+  padding: .7rem 1.4rem;
+  box-shadow: 0 5px 0 var(--shadow);
+  text-decoration: none;
+}
+.button.quiet {
+  color: var(--subtle);
+  background: var(--tile);
+  border-color: rgba(61, 46, 38, 0.18);
+  box-shadow: none;
+  cursor: default;
+}
+.button small { display: block; font-size: 17px; opacity: .8; }
+
+footer {
+  margin-top: 2.6rem;
+  text-align: center;
+  color: var(--subtle);
+  font-size: 19px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid rgba(61, 46, 38, 0.12);
+  margin: 1.2rem 0;
+}
